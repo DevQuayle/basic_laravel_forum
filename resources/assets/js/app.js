@@ -18,3 +18,22 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+$('.edit-post').on('click', function(){
+    var url = $(this).attr('data-url');
+    var id = $(this).attr('data-id');
+
+    $.ajax({
+        type     : "POST",
+        url      : url,
+        data     : {id_post:id },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data) {
+            $('#edit-editor').froalaEditor('html.set', data.text);
+            $('input[name=post_id]').val(data.id);
+            $('input[name=topic_id]').val(data.topic_id);
+        },
+    });
+});

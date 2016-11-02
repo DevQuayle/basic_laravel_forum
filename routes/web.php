@@ -22,6 +22,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/forum', 'ForumController@index');
+Route::get('/topic-show/{id}', 'ForumController@show');
+
+
+
+
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/users-list', 'AdminController@usersList');
@@ -37,5 +43,11 @@ Route::group(['middleware' => 'member'], function(){
 
 Route::group(['middleware' => 'auth'], function(){
     Route::post('/update-user/{id}', 'AdminController@updating');
+    Route::post('/add-post/{id}', 'ForumController@addPost');
+    Route::post('/edit-post', 'ForumController@editPost');
+    Route::post('/update-post', 'ForumController@updatePost');
+    Route::get('/delete-post/{id}', 'ForumController@deletePost');
+    Route::get('/delete-topic/{id}', 'ForumController@deleteTopic');
+    Route::post('/add-topic', 'ForumController@addTopic');
 });
 

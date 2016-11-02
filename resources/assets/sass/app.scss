@@ -7,3 +7,37 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.topic{
+  display: block;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.info{
+  font-size: 12px;
+  color:lightgray;
+}
+
+.editr-container{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  .odp{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.fr-emoticon{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
