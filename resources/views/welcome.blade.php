@@ -1,88 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Forum</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Zaloguj</a>
-                    <a href="{{ url('/register') }}">Zarejestruj</a>
-                </div>
-            @endif
-
+@section('content')
             <div class="content">
-                <div class="title m-b-md">
-                    Forum
-                </div>
 
-                <div class="links">
-                    <a href="{{ url('/login') }}">Zaloguj</a>
-                    <a href="{{ url('/register') }}">Zarejestruj</a>
-                </div>
+                    <div class="col-md-6 col-md-offset-2">
+                        <div class="panel panel-default">
+                            <div  class="panel panel-primary " >
+                                <div class="panel-heading clearfix">
+                                    <a style="display: block; color:white;" class="float-left" href="#">
+                                        <h1 class="panel-title">Zasady panujące na forum</h1>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <ul>
+                                <li>Korzystanie z forum jest całkowicie bezpłatne.</li>
+                                <li>Aby mieć możliwość wypowiedzi na forum, należy się⦁	 zarejestrować .</li>
+                                <li>Treści publikowane na forum muszą być zgodne z polskim prawem.</li>
+                                <li>
+                                    Zabrania się publikowania na forum treści i materiałów wulgarnych,
+                                    pornograficznych, nieetycznych, obrażających czyjeś uczucia religijne lub
+                                    uznawanych powszechnie za obraźliwe oraz stanowiących reklamę innych, polskich
+                                    serwisów o tematyce zbliżonej do Jeździeckiego Centrum Informacyjnego. Dotyczy
+                                    to wszelkich treści wprowadzonych na forum przez użytkownika - w
+                                    wiadomościach, pseudonimie, podpisie, emblemacie i innych.
+                                </li>
+
+                                <li>
+                                    Administrator i moderatorzy podejmują starania mające na celu usuwanie
+                                    wszelkich uznawanych za obraźliwe materiałów jak najszybciej, jednakże nie
+                                    jest możliwe przeczytanie każdej wiadomości. Należy więc zdawać sobie sprawę,
+                                    że zawartość każdego postu na tym forum wyraża poglądy i opinie jego autora a
+                                    nie administratorów czy moderatorów (poza wiadomościami pisanymi przez nich) i
+                                    nie ponoszą oni za te treści odpowiedzialności.
+                                </li>
+                                <li>
+                                    Każdy użytkownik forum powinien starać się traktować innych uczestników
+                                    dyskusji tak samo, jak sam chciałby być traktowany. Oczekując szacunku,
+                                    pamiętajmy o okazywaniu go innym.
+                                </li>
+
+                                <li>
+                                    Na forum Jeździeckiego Centrum Informacyjnego funkcjonują rangi związane z
+                                    ilością wysłanych postów oraz posiadaną wiedza/umiejętnościami/stopniem
+                                    zaangażowania w życie forum i/lub serwisu Jeździeckiego Centrum
+                                    Informacyjnego. Aktywne uczestniczenie w dyskusjach toczących się na forum,
+                                    jest bardzo mile widziane - należy jednak pamiętać, że na tym forum, większa
+                                    wymowę ma poziom merytoryczny publikowanych materiałów, niż ich ilość.
+                                </li>
+
+                                <li>
+                                    Forum nie służy do załatwiania spraw prywatnych - do tego służy mechanizm
+                                    PW (prywatna wiadomość) oraz email.
+                                </li>
+
+                                <li>
+                                    Przy publikacji jakichkolwiek materiałów, należy pamiętać o przestrzeganiu
+                                    praw autorskich.
+                                </li>
+
+                                <li>Zabrania się samowolnego publikowania cudzych danych teleadresowych.</li>
+                                <li>
+                                    Na forum zabrania się reklamowania czegokolwiek. Dotyczy to w
+                                    szczególności treści komercyjnych, ale i nachalne promowanie treści o
+                                    charakterze niekomercyjnym, również nie jest zbyt mile widziane.
+                                </li>
+                                <li>
+                                    Szczegółowe wskazówki dotyczące publikowania wiadomości na forum, znajdują
+                                    się w punkcie IV. niniejszego regulaminu.
+                                </li>
+                                <li>
+                                    Jeżeli na danym forum obowiązują szczególne zasady, są one zamieszczone na
+                                    tym forum w specjalnym ogłoszeniu. Jest tam również sprecyzowana tematyka
+                                    danego forum.
+                                </li>
+                                <li>
+                                    Wobec zasad obowiązujących na forum, wszyscy użytkownicy są równi. Do
+                                    przestrzegania regulaminu zobowiązani są zwykli użytkownicy, moderatorzy, oraz
+                                    administrator  forum.
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                        </div>
+
+                <div class="panel col-md-2 panel-default">
+                    <div  class="panel panel-primary " >
+                        <div class="panel-heading clearfix">
+
+                                <h1 class="panel-title">Linki</h1>
+
+                        </div>
+                    </div>
+                <ul class=" nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="http://www.qnwortal.pl/forum">qnwortal.pl</a></li>
+                    <li role="presentation"><a href="https://forum.miau.pl/">miau.pl</a></li>
+                    <li role="presentation"><a href="http://forum.szczury.biz/">szczury.biz</a></li>
+                    <li role="presentation"><a href="http://forumozwierzetach.pl/">forumozwierzetach.pl</a></li>
+                    <li role="presentation"><a href="http://www.dogomania.com/forum/">dogomania.com</a></li>
+                </ul>
             </div>
-        </div>
-    </body>
-</html>
+    </div>
+@endsection
